@@ -11,9 +11,9 @@ setup(
   download_url = 'https://github.com/ovanov/FITSxtractor/archive/refs/tags/v0.1.tar.gz',
   keywords = ['FITS', 'xml', 'csv', 'CLI programm'],
   install_requires=[
-          'pandas',
-          'openpyxl',
-          'tqdm'
+          'pandas>=1.3.1',
+          'openpyxl>=3.0.7',
+          'tqdm==4.61.2'
       ],
   classifiers=[
     'Development Status :: 3 - Alpha',
