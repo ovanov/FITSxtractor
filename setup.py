@@ -1,14 +1,18 @@
 from distutils.core import setup
+
+with open("README.md", "r", encoding="utf-8") as fh:
+  long_description = fh.read()
 setup(
   name = 'FITSxtractor',
   packages = ['FITSxtractor'],
   version = '0.1',
   license='MIT',
   description = 'This package extracts xml metadata from FITS output to a csv or xlsx file',
+  long_description=long_description,
+  long_description_content_type="text/markdown",
   author = 'ovanov',
   author_email = 'ovanov@protonmail.com',
   url = 'https://github.com/ovanov/FITSxtractor',
-  download_url = 'https://github.com/ovanov/FITSxtractor/archive/refs/tags/v0.1.tar.gz',
   keywords = ['FITS', 'xml', 'csv', 'CLI programm'],
   install_requires=[
           'pandas>=1.3.1',
