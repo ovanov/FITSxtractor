@@ -22,6 +22,7 @@ The following shows how to get and use FITSxtractor.
 
     $ pip install FITSxtractor
 
+Concider that you might have to add the installation folder to your PATH.
 
 If you would rather like to customize the code to your needs, grab a stable version under "Releases". All the files are extensively commented as well, in order to make the files more user firendly.
 

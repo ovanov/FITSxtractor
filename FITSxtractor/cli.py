@@ -26,8 +26,8 @@ from pandas.core.frame import DataFrame
 from tqdm import trange
 
 
-from fits_obj.ExtractorClass import Extraction
-from fits_obj.FITSClass import FITS_obj
+from .ExtractorClass import Extraction
+from .FITSClass import FITS_obj
 
 def argument_parser() -> Dict:
     """

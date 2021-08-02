@@ -8,8 +8,8 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 
 setup(
   name = 'FITSxtractor',
-  packages = ['FITSxtractor'],
-  version = '0.4',
+  packages = find_packages(),
+  version = '0.9.1',
   license='MIT',
   description = 'This package extracts xml metadata from FITS output to a csv or xlsx file',
   long_description=long_description,
@@ -18,6 +18,7 @@ setup(
   author_email = 'ovanov@protonmail.com',
   url = 'https://github.com/ovanov/FITSxtractor',
   keywords = ['FITS', 'xml', 'csv', 'CLI programm'],
+  platforms='any',
   install_requires=[
           'pandas>=1.3.1',
           'openpyxl>=3.0.7',
@@ -34,6 +35,10 @@ setup(
     'Programming Language :: Python :: 3.8',
     'Programming Language :: Python :: 3.9',
   ],
-  package_dir={"": "src"},
   python_requires=">=3.6",
+  entry_points={
+    'console_scripts': [
+      'FITSxtractor=FITSxtractor.cli:main'
+    ]
+  }
 )
