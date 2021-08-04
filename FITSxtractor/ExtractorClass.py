@@ -41,15 +41,10 @@ class Extraction:
             if id != None:
                 self.fits_obj.status = id
 
-            #extract "identity" info
-            id_base = element.find('fits:identity',self.ns)
-            id_format = id_base.get('format')
-            mimetype = id_base.get('mimetype')
+            for e in element.findall('fits:identity', self.ns):
+                self.fits_obj.identity_format.append(e.get('format'))
+                self.fits_obj.mimetype.append(e.get('mimetype'))
 
-            # change the default values of the fits_obj
-            self.fits_obj.identity_format.append(id_format)
-            self.fits_obj.mimetype.append(mimetype)
-            
             for e in element.findall('fits:identity', self.ns):
                 ext = e.find('fits:externalIdentifier', self.ns)
                 if ext != None: # if ext == None, the appended object is empty and therefore not represented in the DataFrame later

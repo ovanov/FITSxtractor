@@ -42,7 +42,7 @@ def argument_parser() -> Dict:
     default=[sys.stdin])
 
     parser.add_argument('--output', '-o',
-    help='Give the path and the name of the output file. The name of the output file should be specified (use .csv or .xlsx) If no extension was specified, it defaults to .xlsx',
+    help='(required) Give the path and the name of the output file. The name of the output file should be specified (use .csv or .xlsx) If no extension was specified, it defaults to .xlsx',
     nargs='?',
     type=str,
     default=False)
