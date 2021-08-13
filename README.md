@@ -6,7 +6,7 @@
     <a href="https://github.com/ovanov/FITSxtractor#ovanov"><img src="https://img.shields.io/github/license/ovanov/FITSxtractor?color=black&style=plastic" height="20"/></a>
 </p>
 
-<p align="center"><a href="https://github.com/ovanov/FITSxtractor#ovanov"><img src="C:\Users\ljovanovic\Documents\demo_exportFITSxtractor.gif" width="100%"/></a></p><br/>
+<p align="center"><a href="https://github.com/ovanov/FITSxtractor#ovanov"><img src="C:\Users\ljovanovic\Documents\demo_export\FITSxtractor.gif" width="100%"/></a></p><br/>
 
 ## :computer: What is it about?
 
