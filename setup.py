@@ -9,7 +9,7 @@ with open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 setup(
   name = 'FITSxtractor',
   packages = find_packages(),
-  version = '0.9.1',
+  version = '0.9.2',
   license='MIT',
   description = 'This package extracts xml metadata from FITS output to a csv or xlsx file',
   long_description=long_description,
