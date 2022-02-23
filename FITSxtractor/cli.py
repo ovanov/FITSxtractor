@@ -26,8 +26,11 @@ from pandas.core.frame import DataFrame
 from tqdm import trange
 
 
-from .ExtractorClass import Extraction
-from .FITSClass import FITS_obj
+# from .ExtractorClass import Extraction
+# from .FITSClass import FITS_obj
+
+from ExtractorClass import Extraction
+from FITSClass import FITS_obj
 
 def argument_parser() -> Dict:
     """
@@ -47,7 +50,26 @@ def argument_parser() -> Dict:
     type=str,
     default=False)
 
-    # future TODO: adding more flags, if more "explicit" XML information is needed
+    parser.add_argument('--base', '-b',
+    help='Set this flag to parse the basic metadata',
+    default=False,
+    action='store_true')
+
+    parser.add_argument('--no-base',
+    help='Set this flag to NOT parse the basic metadata. It also overwrites --base',
+    default=False,
+    action='store_true')
+
+    parser.add_argument('--vid',
+    help='Set this flag to parse additional metadata regarding Video files',
+    default=False,
+    action='store_true')
+
+    parser.add_argument('--all',
+    help='Set this flag to parse all additional metadata (not recomended: when no metadata is available, the values are stored as "False"',
+    default=False,
+    action='store_true')
+
 
     return parser
 
@@ -83,6 +105,9 @@ def extractor(file_path: str) -> FITS_obj:
     metadata = metadata.extract_fileinfo()
     metadata = metadata.extract_identification()
     metadata = metadata.extract_filestatus()
+
+    #metadata = metadata.extract_video()
+    metadata = metadata.extract_audio()
     
     return asdict(metadata.fits_obj) # retruning as asdict in order to represent the dataclass-obj as a hash (pandas can use this as a df structure)
     
